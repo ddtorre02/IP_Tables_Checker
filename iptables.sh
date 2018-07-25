@@ -20,6 +20,8 @@ else
                         echo "====================================================="
                         echo "The IP [ $1 ] is blocked for [ $reason ]"
                         echo "====================================================="
+                        echo "IP DETAILS:"
+                        curl ipinfo.io/$1
                 fi
         else
                 echo "[ "$1" ] is not a valid IP address"
