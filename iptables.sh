@@ -1,3 +1,15 @@
+#################################
+# Linux IP Tables checker       #
+# This will check IP's blocked  #
+# in F2B with Vesta CP          #
+# Linux Machine                 #
+#                               #
+# Author:  Daniel Dela Torre    #
+# Contact: dan@delatorre.xyz    #
+# Published Date: Jan 04 2018   #
+#################################
+
+
 #!/bin/bash
 clear
 total_ip=$(iptables-save | grep -w REJECT | awk '{print "["NR"]-[ "$8" ]-""[",$4,"]"}' | awk '{gsub("-port-unreachable","");print}' | wc -l);
